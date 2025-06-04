@@ -1,0 +1,316 @@
+/* Navigation bar */
+.topnav{
+    text-align: center;
+    background-color:cadetblue;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+	font-size:20px;
+	padding: 5%;
+    transition: 0.4s;
+    top: 0%;
+    z-index: 99;
+    
+}
+            
+
+/* Links in the navigation bar */
+.topnav a{
+                
+    text-decoration:solid;
+    text-align: center;
+    color: black;
+	margin:center;
+    
+}
+
+.topnav a:hover{
+    background-color:plum;
+    text-align: center;
+    
+}
+
+.topnav a:active{
+    background-color: pink;
+}
+
+#logo{
+
+    background-image: url(Images/logo.png); 
+	position: absolute;
+    top: 12pt;
+    left:24pt;
+    z-index: 100;
+    
+
+}
+
+#logoImage{
+
+}
+
+
+/* .dropdown{
+
+
+
+} */
+
+
+#login {
+
+    text-align: center;
+    background-color: #d2691e;
+
+}
+
+
+#loginh1 {
+
+    text-align: center;
+    color: black;
+
+}
+
+
+#signup{
+
+    text-align: center;
+    background-color:#8b008b;
+    left: 20%;
+    right: 20%;
+
+}
+            
+
+#signuph1{
+
+    text-align: center;
+    color: black;
+
+}
+            
+
+/* header{
+
+    background-image: url('../Assignment/Images/1_TojGq3TRq_Tkc4FS0jG91A.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+
+}  */
+
+
+/* header{
+
+    background-image: url('../Assignment/Images/gituar.jpg'); 
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px
+    margin-left: auto;
+    margin-right: auto;
+
+} */
+
+
+/* body{
+
+    background-image: url('../Assignment/Images/1_TojGq3TRq_Tkc4FS0jG91A.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+
+} */
+
+
+#bgPhoto{
+
+    background-image: url(Images/dancing.jpg); 
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+
+}
+
+#bgText{
+      /* text-align: center; */
+      color: aqua;
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      
+      /* transform: translate(-50%, -50%); */
+      font-size: 30px;
+}
+
+/* #bgh1{
+                
+    text-align: center;
+    color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    
+    transform: translate(-50%, -50%); 
+    font-size: 20px;
+} */
+
+img{
+
+    width: auto;
+    height: auto;
+
+
+}
+
+.clearfix::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+a{
+    text-align: center;
+
+}
+
+
+
+
+/* Bottom Navigation from Lavanya*/
+
+footer{
+	position:relative;
+	width:100%;
+	height:auto;
+	padding:50px 100px;
+	background:#111;
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+	
+}
+
+footer .container{
+	display:flex;
+	justify-content:space-between;
+	flex-wrap:wrap;
+	flex-direction:row;
+}
+
+footer .container .sec{
+	margin-right:30px;
+}
+
+footer .container .sec.aboutus{
+	width:40%;
+}
+
+footer .container h2{
+	position: relative;
+	color:#fff;
+	font-weight:bold;
+	margin-bottom:15px;
+}
+
+footer .container h2:before{
+	content:'';
+	position:absolute;
+	bottom:-5px;
+	left:0;
+	width:50px;
+	height:2px;
+	background:#8B0000;
+	
+}
+
+footer p{
+	color:#999;
+}
+
+.sci{
+	margin-top:20px;
+	display:flex;	
+}
+
+
+.sci li{
+	list-style:none;
+}
+
+.sci li a{
+	display:inline-block;
+	width:40px;
+	height:40px;
+	background:#222;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin-right:10px;
+	text-decoration:none;
+	border-radius:50px;
+}
+
+.sci li a:hover{
+	background:#8B0000;
+}
+
+.sci li a i{
+	color:#fff;
+	font-size:20px;
+}
+
+.quickLinks{
+	position:relative;
+	width:25%;
+	margin-left:40px;
+}
+
+.quickLinks ul li{
+	list-style:none;
+}
+
+.quickLinks ul li a{
+	color:#999;
+	text-decoration:none;
+	margin-bottom:10px;
+	display:inline-block;
+	
+}
+
+.quickLinks ul li a:hover{
+	color:#fff;
+}
+
+
+
+.contact .info{
+	position:relative;
+	
+}
+
+.contact .info li{
+	display:flex;
+	margin-bottom:16px;
+}
+
+.contact .info li span:nth-child(1){
+	color:#fff;
+	font-size:20px;
+	margin-right:15px;
+}
+
+.contact .info li span{
+	color:#999;
+}
+
+.contact .info li a{
+	color:#999;
+	text-decoration:none;
+}
+
+.contact .info li a:hover{
+	color:#fff;
+}
