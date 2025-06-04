@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title>FACTS</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/facts.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+		integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="CSS/particle.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body onload="navOnStart()">
+
+	<button onclick="topFunction()" id="backtotop" title="Go to top">&#94;</button>
+	<script>
+		//Get the button to the correct place by id
+		var mybutton = document.getElementById("backtotop");
+
+		// When the user scrolls down 20px from the top of the document, the button becomes visible
+		//window.onscroll = function() {scrollFunction()};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+
+	<header class="fixed-top scrolled">
+		<div class="main">
+			<img src="Images/logo.png" class="logo" alt="Logo">
+			<nav>
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="AboutUs.html">About us</a></li>
+					<li><a href="Gallery.html">Gallery</a></li>
+					<li><a href="QuizHome.html">Quiz</a></li>
+					<li><a href="Sitemap.html">Site map</a></li>
+					<li><a href="Facts.html" class="active">Facts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<script>
+		var navbar = document.querySelector('header')
+
+		function navOnStart() {
+			navbar.classList.remove('scrolled')
+		}
+		function navAfterStart() {
+			if (window.pageYOffset > 0) {
+				navbar.classList.add('scrolled')
+			} else { navbar.classList.remove('scrolled') }
+		}
+
+		window.onscroll = function () { navAfterStart(), scrollFunction() };
+
+	</script>
+
+	<div class="facts-bg">
+		<img src="images/background_facts.jpg" class="facts-img">
+	</div>
+
+	<h2 class="subHeading">Let's extend our knowledge</h2>
+
+	<div class="facts">
+
+		<div class="frames">
+			<img src="images/tip_1.jpg" alt="mariah carey" style="width:100%">
+			<div class="container">
+				<p class="txt">Mariah Carey is confirmed as the first artist to top the billboard hot 100 chart across
+					four
+					decades.
+					She is referred to as the "Songbird Supreme" and the "Queen of Christmas"</p>
+			</div>
+		</div>
+
+		<div class="frames">
+			<img src="images/tip_2.jpg" alt="neanderthal flute" style="width:100%">
+			<div class="container">
+				<p class="txt">Neanderthal flute is considered to be the oldest musical instrument in the world.
+					It is made from the left thighbone of a young cave bear and has four pierced holes.
+				</p>
+			</div>
+		</div>
+
+		<div class="secondFrames">
+			<img src="images/tip_3.jpg" alt="four part harmony" style="width:100%">
+			<div class="container">
+				<p class="txt">
+					Leo Fender, the founder of the iconic electric guitar and bass brand and Rock and Roll
+					Hall of Fame inductee, never learned to play either instrument.</p>
+			</div>
+		</div>
+
+		<div class="secondFrames">
+			<img src="images/tip_4.jpg" alt="mozart" style="width:100%">
+			<div class="container">
+				<p class="txt">Wolfgang Amadeus Mozart is the best and most famous composer of classical music.
+					Born in Salzburg, in the Holy Roman Empire, Mozart showed prodigious ability from his earliest
+					childhood.</p>
+			</div>
+		</div>
+
+		<div class="thirdFrames">
+			<img src="images/tip_5.jpg" alt="mozart" style="width:100%">
+			<div class="container">
+				<p class="txt">The four main voices are typically labelled as soprano (or treble and countertenor),
+					alto (contralto, countertenor or mezzo), tenor, and bass.</p>
+			</div>
+		</div>
+
+		<div class="thirdFrames">
+			<img src="images/tip_6.jpg" alt="mozart" style="width:100%">
+			<div class="container">
+				<p class="txt">Paul McCartney finally admitted that neither he nor any of his Beatles bandmates were
+					able to read or write music during a 2018 interview.</p>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="editor"><a href="EditorStudent3.html"><span>EDITOR</span></a></div>
+
+	<footer>
+		<div class="container">
+			<div class="sec aboutus">
+				<h2>About us</h2>
+				<p>We Melomaniacs, do the process of developing, creating and refining recorded music for public
+					presentation.
+					We are committed to understanding your idea of a prefect composition to recording and sound design
+					to mixing and mastering.</p>
+				<ul class="sci">
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+			</div>
+
+			<div class="sec quickLinks">
+				<h2>Quick Links</h2>
+				<ul>
+					<li><a href="AboutUs.html">About</a></li>
+					<li><a href="QuizHome.html">Quiz</a></li>
+					<li><a href="Sitemap.html">Site map</a></li>
+					<li><a href="Facts.html">Facts</a></li>
+				</ul>
+
+			</div>
+
+			<div class="sec contact">
+				<h2>Contact Info</h2>
+				<ul class="info">
+					<li>
+						<span><i class="fas fa-map-marker-alt"></i></span>
+						<span>57 Ramakrishna Rd, Colombo<br>
+							00600,<br>Sri lanka.</span>
+					</li>
+
+					<li>
+						<span><i class="fas fa-phone-alt"></i></span>
+						<span><a href="tel:+94787020555">+94 787020555</a></span>
+					</li>
+
+					<li>
+						<span><i class="fas fa-envelope"></i></span>
+						<span><a href="mailto:melomaniacs@gmail.com">melomaniacs@gmail.com</a></span>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+	</footer>
+
+</body>
+
+</html>

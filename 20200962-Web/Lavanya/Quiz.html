@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>QUIZ</title>
+
+	<link rel="stylesheet" href="CSS/Quiz_Start.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/quiz.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+</head>
+
+<body onload="NextQuestion(0), countdown(), navOnStart() ">
+
+	<header class="fixed-top scrolled">
+		<div class="main">
+			<img src="Images/logo.png" class="logo" alt="Logo">
+			<nav>
+				<ul>
+					<li><a href="home.html">Home</a></li>
+					<li><a href="AboutUs.html">About us</a></li>
+					<li><a href="Gallery.html">Gallery</a></li>
+					<li><a href="QuizHome.html" class="active">Quiz</a></li>
+					<li><a href="Sitemap.html">Site map</a></li>
+					<li><a href="Facts.html">Facts</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<script>
+		var navbar = document.querySelector('header')
+
+		function navOnStart() {
+			navbar.classList.remove('scrolled')
+		}
+		function navAfterStart() {
+			if (window.pageYOffset > 0) {
+				navbar.classList.add('scrolled')
+			} else { navbar.classList.remove('scrolled') }
+		}
+
+		window.onscroll = function () { navAfterStart() };
+
+	</script>
+
+	<div class="quiz-bg">
+		<img src="images/background_quiz_round.jpg" class="quiz-img">
+	</div>
+
+	<div class="barContainer"></div>
+	<div class="rightBar">
+		<div class="BarHeadings">Time Left : <span id="timer"></span></div>
+
+		<label id="1">Question 1</label>
+		<label id="2">Question 2</label>
+		<label id="3">Question 3</label>
+		<label id="4">Question 4</label>
+		<label id="5">Question 5</label>
+		<label id="6">Question 6</label>
+		<label id="7">Question 7</label>
+		<label id="8">Question 8</label>
+		<label id="9">Question 9</label>
+		<label id="10">Question 10</label>
+
+	</div>
+
+	<script src="js/Timer.js"></script>
+
+	<main>
+		<!-- creating a modal for when quiz ends -->
+		<div class="modal-container" id="score-modal">
+
+			<div class="modal-content-container">
+
+				<h1>Congratulations, Quiz Completed.</h1>
+
+				<div id="grade" class="grade-details-one">
+					<p>Time to complete : <span id="mint"></span> : <span id="secs"></span></p>
+					<p>Right Answers : <span id="right-answers"></span></p>
+					<p>Wrong Answers : <span id="wrong-answers"></span></p>
+					<p>Score : <span id="player-score"></span>/20</p>
+					<p><span id="remarks"></span></p>
+				</div>
+
+				<div class="modal-button-container">
+					<button onclick="displaySummary()">Continue</button>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="modal-container" id="summary-modal">
+			<div class="modal-content-container-summary">
+				<h1>Quiz Summary</h1>
+				<div class="grade-details-two">
+					<p>Question 1 : <span id=Q1></span></p>
+					<p>Question 2 : <span id=Q2></span></p>
+					<p>Question 3 : <span id=Q3></span></p>
+					<p>Question 4 : <span id=Q4></span></p>
+					<p>Question 5 : <span id=Q5></span></p>
+					<p>Question 6 : <span id=Q6></span></p>
+					<p>Question 7 : <span id=Q7></span></p>
+					<p>Question 8 : <span id=Q8></span></p>
+					<p>Question 9 : <span id=Q9></span></p>
+					<p>Question 10 : <span id=Q10></span></p>
+					<h2>- END -</h2>
+				</div>
+
+				<div class="modal-button-container-summary">
+					<button onclick="backToScoreModal()">Back</button>
+				</div>
+				<div class="modal-button-container-summary">
+					<button onclick="window.history.go(-1)">Quit</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="game-quiz-container">
+
+			<div class="game-details-container">
+
+			</div>
+
+			<div class="game-question-container">
+				<h1 id="display-question"></h1>
+			</div>
+
+			<div class="game-options-container">
+
+				<div class="modal-container-no-choice" id="option-modal">
+
+					<div class="modal-content-container">
+						<h1>Please Pick An Option</h1>
+
+						<div class="modal-button-container">
+							<button onclick="closeOptionModal()">Continue</button>
+						</div>
+
+					</div>
+
+				</div>
+
+				<span>
+					<input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+					<label for="option-one" class="option" id="option-one-label"></label>
+				</span>
+
+
+				<span>
+					<input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+					<label for="option-two" class="option" id="option-two-label"></label>
+				</span>
+
+
+				<span>
+					<input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+					<label for="option-three" class="option" id="option-three-label"></label>
+				</span>
+
+
+				<span>
+					<input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+					<label for="option-four" class="option" id="option-four-label"></label>
+				</span>
+
+
+			</div>
+
+			<div class="next-button-container">
+				<button onclick="handleNextQuestion()">Next Question</button>
+			</div>
+
+		</div>
+	</main>
+
+	<script src="js/Quiz.js"></script>
+
+	<footer>
+		<div class="container">
+			<div class="sec aboutus">
+				<h2>About us</h2>
+				<p>We Melomaniacs, do the process of developing, creating and refining recorded music for public
+					presentation.
+					We are committed to understanding your idea of a prefect composition to recording and sound design
+					to mixing and mastering.</p>
+				<ul class="sci">
+					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+					<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+				</ul>
+			</div>
+
+			<div class="sec quickLinks">
+				<h2>Quick Links</h2>
+				<ul>
+					<li><a href="AboutUs.html">About</a></li>
+					<li><a href="QuizHome.html">Quiz</a></li>
+					<li><a href="Sitemap.html">Site map</a></li>
+					<li><a href="Facts.html">Facts</a></li>
+				</ul>
+
+			</div>
+
+			<div class="sec contact">
+				<h2>Contact Info</h2>
+				<ul class="info">
+					<li>
+						<span><i class="fas fa-map-marker-alt"></i></span>
+						<span>57 Ramakrishna Rd, Colombo<br>
+							00600,<br>Sri lanka.</span>
+					</li>
+
+					<li>
+						<span><i class="fas fa-phone-alt"></i></span>
+						<span><a href="tel:+94787020555">+94 787020555</a></span>
+					</li>
+
+					<li>
+						<span><i class="fas fa-envelope"></i></span>
+						<span><a href="mailto:melomaniacs@gmail.com">melomaniacs@gmail.com</a></span>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+	</footer>
+
+</body>
+
+</html>
